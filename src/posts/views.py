@@ -10,18 +10,17 @@ except:
 
 from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db.models import Q
-from django.http import HttpResponse, HttpResponseRedirect, Http404
-from django.shortcuts import render, get_object_or_404, redirect
+from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
 from comments.forms import CommentForm
 from comments.models import Comment
+
 from .forms import PostForm
 from .models import Post
-
 
 
 def post_create(request):
